@@ -7,7 +7,7 @@
       autohide = true;
       persistent-apps = [
         "/Applications/Alacritty.app"
-        "/Applications/Firefox.app"
+        "/Applications/Zen Browser.app"
         "/Applications/Obsidian.app"
         "/Applications/Zed.app"
       ];
@@ -53,4 +53,6 @@
     # Restart Finder
     /usr/bin/killall Finder
   '';
+
+  security.pam.enableSudoTouchIdAuth = true;
 }

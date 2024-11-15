@@ -12,6 +12,7 @@
     # Browsers
     "firefox"
     "google-chrome"
+    "zen-browser"
 
     # Messaging
 

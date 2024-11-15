@@ -7,11 +7,26 @@
     ./system.nix
   ];
 
-  # Other system configurations
+  # Nix Package Management
   nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = [ pkgs.vim ];
+  environment.systemPackages = with pkgs; [
+      vim
+      ripgrep
+
+      # Nix lsp tools
+      alejandra
+      nixd
+    ];
+
+  # Other system configurations
   services.nix-daemon.enable = true;
-  nix.settings.experimental-features = "nix-command flakes";
+  nix = {
+    gc.automatic = true;
+    optimise.automatic = true;
+    settings = {
+        experimental-features = "nix-command flakes";
+        };
+    };
   programs.zsh.enable = true;
   system.stateVersion = 5;
   nixpkgs.hostPlatform = "aarch64-darwin";
