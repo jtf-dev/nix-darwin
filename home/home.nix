@@ -78,6 +78,8 @@
     ./modules/alacritty.nix
     ./modules/neovim.nix
     ./modules/git.nix
+    ./modules/eza.nix
+    ./modules/starship.nix
   ];
 
   # Let Home Manager install and manage itself.
